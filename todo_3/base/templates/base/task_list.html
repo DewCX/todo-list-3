@@ -4,9 +4,9 @@
     <tr>
         <th>Item</th>
     </tr>
-    {% for task in object_list %}
+    {% for task in tasks %}
     <tr>
-        <th>{{task.title}}</th>
+        <td>{{task.title}}</td>
     </tr>
     {% empty %}
     <h3>No Items in list</h3>
