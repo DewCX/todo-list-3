@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Task
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 
 
 
@@ -22,6 +22,13 @@ class TaskDetail(DetailView):
 
 #Create To Do Element
 class TaskCreate(CreateView):
+    model = Task
+    fields = '__all__'
+    success_url = reverse_lazy('tasks')
+
+
+#Update To Do Element
+class TaskUpdate(UpdateView):
     model = Task
     fields = '__all__'
     success_url = reverse_lazy('tasks')
